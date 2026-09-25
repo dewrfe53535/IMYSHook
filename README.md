@@ -12,6 +12,7 @@ Iris Mysteria mod for DMM Game Player version
 4. [Translation](Translation.md) (Traditional Chinese only)
 5. Show account creation date
 6. AP/BP Full or Expedition finish notification
+7. Traditional Chinese UI localization (text and images)
 
 ## Requirement
 
@@ -33,6 +34,10 @@ You can edit config.json(`./BepInEx/plugins/config.json`) if you don't like defa
 | fps           | 60            | Override FPS setting                               |
 | translate     | true          | Enable/Disable translation feature                 |
 | DoNotVoiceCut | false         | Is block voice-cut inside game                     |
+| uiTranslation | true          | Enable/Disable full UI localization (text+images)  |
+
+UI localization settings live in `./BepInEx/plugins/i18n/config.json`.
+Translations, image replacements and the UI font are checked on startup and cached locally.
 
 ## Key binding
 

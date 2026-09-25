@@ -1,0 +1,12 @@
+{
+  "textEnabled": true,
+  "imageEnabled": false,
+  "lang": "zh_Hant",
+  "remoteEnabled": true,
+  "remoteBaseUrl": "https://imyshook-staging.24245353.xyz/i18n/",
+  "imageBaseUrl": "https://imyshook-staging.24245353.xyz/img_out/",
+  "fontBaseUrl": "https://imyshook-staging.24245353.xyz/font/",
+  "imageLang": "zh_Hant",
+  "fontMode": "replace",
+  "fontFile": ""
+}

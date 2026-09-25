@@ -24,6 +24,13 @@ public class Plugin : BasePlugin
         Translation.InitAsync().Wait();
         Patch.Initialize();
 
+        // 全 UI 汉化（开关在主 config.json，细项在 i18n/config.json）
+        UiI18nConfig.Read();
+        UiFontRemote.Init();
+        UiI18n.Init();
+        UiImages.Init();
+        UiPatches.Initialize();
+
         AddComponent<PluginBehavior>();
     }
 

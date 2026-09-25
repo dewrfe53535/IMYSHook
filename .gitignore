@@ -4,3 +4,16 @@
 /*.DotSettings.user
 /*.otf
 lib/
+/staging/
+/REPORT_UI_I18N.md
+/i18n/README.md
+/img_src/
+/img_out/
+/i18n/zh_Hant.json
+/i18n/zh_Hant.version.json
+/i18n/zh_Hant.extraction-report.json
+/i18n/zh_Hant.metadata.source.json
+/i18n/zh_Hant.prefab.source.json
+/i18n/zh_Hant.ui-source-index.json
+/tools/__pycache__/
+/font/

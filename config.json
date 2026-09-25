@@ -2,5 +2,6 @@
     "speed": 0.5,
     "fps": 60,
     "translation": true,
-    "DoNotVoiceCut": false
+    "DoNotVoiceCut": false,
+    "uiTranslation": true
 }

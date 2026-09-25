@@ -10,6 +10,11 @@ public class PluginBehavior : MonoBehaviour
     public static float CurrentGameSpeed { get; set; }
     private static float LastGSExecuteTime { get; set; }
     private static float LastFPSExecuteTime { get; set; }
+    private float _lastSweepTime;
+    private float _lastImageSweepTime = -1.5f;
+#if DEBUG
+    private float _lastProbeTime;
+#endif
 
     private void Update()
     {
@@ -104,5 +109,29 @@ public class PluginBehavior : MonoBehaviour
             Application.targetFrameRate = IMYSConfig.FPS;
             Plugin.Global.Log.LogInfo("FPS changed. Reset to: " + IMYSConfig.FPS);
         }
+
+        // prefab 反序列化不走 set_sprite / SetText，周期补齐
+        _lastSweepTime += Time.deltaTime;
+        if (_lastSweepTime >= 3.0f)
+        {
+            _lastSweepTime = 0.0f;
+            UiPatches.SweepText();
+        }
+        // 图片与文字扫描错开半个周期，避免两种批量替换叠在同一帧。
+        _lastImageSweepTime += Time.deltaTime;
+        if (_lastImageSweepTime >= 3.0f)
+        {
+            _lastImageSweepTime = 0.0f;
+            if (UiImages.ReplacementCount > 0) UiImages.Sweep();
+        }
+
+#if DEBUG
+        _lastProbeTime += Time.deltaTime;
+        if (_lastProbeTime >= 5.0f)
+        {
+            _lastProbeTime = 0.0f;
+            DebugProbe.Summary();
+        }
+#endif
     }
 }
